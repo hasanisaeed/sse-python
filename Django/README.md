@@ -1,4 +1,4 @@
     python ./manage.py runserver
     
 #### Send notification:
-    python ./manage.py notify "Your Message"
+    python ./manage.py notify <username> <message>

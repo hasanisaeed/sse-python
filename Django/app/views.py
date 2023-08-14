@@ -21,8 +21,7 @@ def stream(request):
 #         while True:
 #             time.sleep(3)
 #             notification = Notification.objects.filter(
-#                 sent=False, user=User.objects.get(username='admin')
-#             ).first()
+#                 sent=False, user=User.objects.get(username=request.user) ).first()
 #
 #             text = ''
 #
