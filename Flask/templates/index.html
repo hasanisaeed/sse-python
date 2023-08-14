@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask SSE Example</title>
+</head>
+<body>
+    <div id="my-stream"></div>
+    <script>
+        var targetContainer = document.getElementById("my-stream");
+        var eventSource = new EventSource("/stream");
+        eventSource.addEventListener("message", function(e) {
+            targetContainer.innerHTML = e.data;
+            if (parseInt(e.data) > 20) {
+                targetContainer.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
